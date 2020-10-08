@@ -4,9 +4,14 @@ const {  ResponseStatusCodeEnum } = require('../constants');
 module.exports = {
     createComment: async (req, res) => {
         try {
+            const postId = req.params;
             const comment = req.body;
             const { _id } = req.user;
-            const newComment = await commentService.createComment({ ...comment, authorId: _id});
+            const newComment = await commentService.createComment({
+                ...comment,
+                authorId: _id,
+                postId: postId
+            });
             res.json(newComment);
         } catch (e) {
             res.status(ResponseStatusCodeEnum.BAD_REQUEST).json({

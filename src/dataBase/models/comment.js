@@ -8,6 +8,11 @@ const commentSchema = new mongoose.Schema({
         ref: TableNames.EDITORS,
         required: false,
     },
+    postId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: TableNames.POST,
+        required: false,
+    },
     text: {
         type: String,
         required: false,
