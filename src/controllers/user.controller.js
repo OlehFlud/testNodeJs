@@ -52,8 +52,7 @@ module.exports = {
       }
       res.end();
     } catch (e) {
-      console.log(e);
-      res.status(500).json({
+      res.status(ResponseStatusCodeEnum.BAD_REQUEST).json({
         error: e,
       });
     }

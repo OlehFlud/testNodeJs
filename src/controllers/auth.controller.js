@@ -29,7 +29,9 @@ module.exports = {
             });
             res.json({ accessToken, refreshToken });
         } catch (e) {
-            return next(e)
+            res.status(ResponseStatusCodeEnum.BAD_REQUEST).json({
+                error: e,
+            });
         }
     },
 
