@@ -58,4 +58,11 @@ module.exports = {
       });
     }
   },
+
+  updateUser: async (req, res, next) => {
+    const { _id } = req.params;
+    const parameters = req.body;
+    await userService.updateUserByParams({ _id }, parameters);
+    res.sendStatus(ResponseStatusCodeEnum.OK);
+  },
 };

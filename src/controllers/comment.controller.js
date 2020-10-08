@@ -18,7 +18,7 @@ module.exports = {
     updateComment: async (req, res, next) => {
         const { _id } = req.params;
         const parameters = req.body;
-        await commentService.updateComment({ _id }, parameters);
+        await commentService.updateByParams({ _id }, parameters);
         res.sendStatus(ResponseStatusCodeEnum.OK);
     },
 
@@ -45,5 +45,5 @@ module.exports = {
         const commentId = req.params._id;
         await commentService.unlikeComment(_id, commentId)
         res.sendStatus(ResponseStatusCodeEnum.OK)
-    }
+    },
 };

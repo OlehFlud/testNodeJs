@@ -27,5 +27,12 @@ module.exports = {
       { $pull: { likes: userId } },
       { new: true }
     ),
+
+  confirmComment: (userId, commentIdtoUnlike) =>
+    CommentModel.findByIdAndUpdate(
+      { _id: commentIdtoUnlike },
+      { $pull: { likes: userId } },
+      { new: true }
+    ),
 }
 

@@ -11,8 +11,8 @@ router.delete('/comment:_id', authMiddleware.CheckAccessTokenMiddleware, comment
 
 router.get('/comment', authMiddleware.CheckAccessTokenMiddleware, commentController.findAllComment);
 
-router.post('/like:_id',authMiddleware.CheckAccessTokenMiddleware,commentController.likeComment);
+router.post('/like:_id',authMiddleware.CheckAccessTokenMiddleware, commentController.likeComment);
 
-router.post('/unlike:_id',authMiddleware.CheckAccessTokenMiddleware,commentController.unlikeComment);
+router.post('/unlike:_id',authMiddleware.CheckAccessTokenMiddleware, commentController.unlikeComment);
 
 module.exports = router;
